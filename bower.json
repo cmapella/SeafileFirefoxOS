@@ -1,0 +1,6 @@
+{
+  "name": "seafile-client",
+  "dependencies": {
+    "materialize": "0.97.6"
+  }
+}
