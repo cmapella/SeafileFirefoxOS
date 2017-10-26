@@ -8,11 +8,10 @@
  * Controller of the seafileFirefoxOsApp
  */
 angular.module('seafileFirefoxOsApp')
-    .controller('LoginCtrl', function($scope) {
-        $scope.vm = {
-            formData: {
-                email: 'test@gmail.com',
-                password: 'foobar'
-            }
+    .controller('LoginCtrl', function($scope, serviceRest) {
+        $scope.login = function() {
+            console.log($scope.username);
+            console.log($scope.password);
+            serviceRest.login($scope.username, $scope.password);
         };
     });
