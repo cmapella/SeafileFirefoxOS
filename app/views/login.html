@@ -10,9 +10,16 @@
             <md-card-content>
                 <form name="Form" ng-submit="login()">
                     <md-input-container class="md-block">
+                        <label>Server address</label>
+                        <input type="text" name="serverAddress" ng-model="serverAddress" placeholder="http://" required="" />
+                        <div ng-messages="Form.serverAddress.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Please enter your server address</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
                         <label>Login</label>
                         <input type="text" name="username" ng-model="username" placeholder="login" required="" />
-                        <div ng-messages="Form.email.$error" role="alert" multiple="">
+                        <div ng-messages="Form.username.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Please enter your email.</div>
                         </div>
                     </md-input-container>

@@ -11,9 +11,16 @@ angular.module('seafileFirefoxOsApp')
     .factory('serviceRest', function serviceRest($http) {
         // Public API here
         return {
-            login: function(username, password) {
+            login: function(serverAddress, username, password) {
                 console.log("CALL API REST SEAFILE")
-                return $http.post("http://localhost:8000/api2/auth-token", { username: username, password: password });
+                return $http.post(serverAddress + "/api2/auth-token/", { username: username, password: password }).then(
+                    function(response) {
+                        console.log(response.data.token);
+                    },
+                    function(response) {
+                        // failure callback
+                    }
+                );
             }
         };
     });
