@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="form" class="col s12" (ngSubmit)="onSubmit(form)" novalidate>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="checkbox" class="filled-in" id="https" checked="checked" />
+                    <label for="https">Https</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input formControlName="server_address" id="server_address" type="text" class="validate" placeholder="http://">
+                    <label for="server_address" class="active">Adresse du serveur</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input formControlName="email" id="email" type="email" class="validate" placeholder="Saisir adresse email" required>
+                    <label for="email" class="active">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input formControlName="password" id="password" type="password" class="validate" required>
+                    <label for="password" class="active">Password</label>
+                </div>
+            </div>
+            <div class='row'>
+                <button class="col s12 btn waves-effect waves-light orange" type="submit">Connexion</button>
+            </div>
+        </form>
+    </div>
+</div>
