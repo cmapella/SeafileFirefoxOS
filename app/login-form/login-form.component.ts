@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { AuthService } from "../services/auth.service";
+import { PageTitleService } from "../services/page-title.service";
 @Component({
   selector: 'app-login-form',
   templateUrl: 'app/login-form/login-form.component.html',
@@ -11,11 +12,12 @@ export class LoginFormComponent implements OnInit {
   loading = false;
   error = '';
 
-  constructor(private authenticationService: AuthService, private router: Router) { }
+  constructor(private authenticationService: AuthService, private router: Router, private pageTitleService: PageTitleService) { }
 
   ngOnInit() {
     // reset login status
     this.authenticationService.logout();
+    this.pageTitleService.setTitle("Connexion");
   }
 
   login() {
