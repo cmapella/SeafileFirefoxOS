@@ -20,10 +20,10 @@ import { AuthGuard } from "./guards/auth-guard.service";
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     AccueilComponent,
     LoginFormComponent,
+    HomeComponent
     
   ],
   imports: [

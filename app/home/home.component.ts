@@ -4,8 +4,8 @@ import { User } from '../models/user';
 import { UserService } from '../services/user.service';
  
 @Component({
-    moduleId: module.id,
-    template: '<p>TEST</p>'
+    selector: 'app-home',
+    templateUrl: 'app/home/home.component.html',
 })
  
 export class HomeComponent implements OnInit {
