@@ -1,22 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PageTitleService } from "./services/page-title.service";
 import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app/app.component.html',
+  styleUrls: ['./app/app.component.css']
   providers: [PageTitleService]
 
 })
 export class AppComponent implements OnInit {
-  header: string;
-  constructor(private title: Title, private pageTitleService : PageTitleService){
+  headerTitle: string;
+  enableHeader: boolean = false;
+  constructor(private cdRef: ChangeDetectorRef, private title: Title, private pageTitleService: PageTitleService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.pageTitleService.title.subscribe((val: string) => {
-      this.header = val;
-  });
+      this.headerTitle = val;
+    });
+
+
 
   }
+
+  ngAfterViewChecked() {
+    console.log("! changement de la date du composant !");
+    this.pageTitleService.enableBackBtn.subscribe((enable: boolean) => {
+      this.enableHeader = enable;
+    });
+    this.cdRef.detectChanges();
+  }
+
+
+  goBack(): void {
+    window.history.back();
+  }
+  
 }

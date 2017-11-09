@@ -1,4 +1,5 @@
-<div class="grey lighten-2">
-    <span class="nav-title">{{header}}</span>
+<div id="header" *ngIf="enableHeader" class="grey lighten-2">
+    <a class="waves-effect waves-teal btn-flat grey lighten-2" (click)="goBack()"><i class="material-icons left">arrow_back</i></a>
+    <span class="nav-title">{{headerTitle}}</span>
 </div>
 <router-outlet></router-outlet>

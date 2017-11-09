@@ -3,12 +3,6 @@
         <form class="col s12" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="checkbox" class="filled-in" id="https" checked="checked" />
-                    <label for="https">Https</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
                     <input id="server" name="server" [(ngModel)]="model.server" #server="ngModel" [ngClass]="{ 'invalid': f.submitted && !server.valid }" type="text" class="validate " placeholder="http://" required>
                     <label for="server" class="active" data-error="L'adresse du serveur n'est pas saisie ou incorrecte">Adresse du serveur</label>
                 </div>

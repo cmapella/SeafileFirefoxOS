@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PageTitleService } from "../services/page-title.service";
 
 @Component({
   selector: 'app-accueil',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private pageTitleService: PageTitleService, private router:Router) { }
 
   ngOnInit() {
+    this.pageTitleService.setEnableBackBtn(false);
   }
 
   redirectToLogin(): void {
