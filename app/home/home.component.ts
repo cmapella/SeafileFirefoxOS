@@ -10,7 +10,7 @@ import { PageTitleService } from "../services/page-title.service";
 })
  
 export class HomeComponent implements OnInit {
-user: User;
+user: User = new User();
  
     constructor(private userService: UserService,  private pageTitleService: PageTitleService) { }
  
@@ -20,13 +20,12 @@ user: User;
     var user = JSON.parse(localStorage.getItem('currentUser'));
     var info = JSON.parse(localStorage.getItem('server'));
     
-    console.log(user);
-    console.log(info);
 
-    console.log(this.userService.getUsers(info.server, user.username));
+    this.userService.getUsers(info.server, user.username);
         this.userService.getUsers(info.server, user.username)
             .subscribe(user => {
-                this.user = user;
+                console.log(user);
+                this.user.email = user.email;
             });
         console.log(this.user);
 

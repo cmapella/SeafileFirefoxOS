@@ -19,6 +19,7 @@ export class AuthService {
         let options = new RequestOptions({ headers: headers });
                 return this.http.post(server+'/api2/auth-token/',body, options)
                         .map((response: Response) => {
+                                console.log(response);
                                 // login successful if there's a jwt token in the response
                                 let token = response.json() && response.json().token;
                                 if (token) {

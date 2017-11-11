@@ -18,11 +18,13 @@ export class UserService {
         console.log(this.authenticationService.token);
         let headers = new Headers({ 'Authorization': 'Token ' + this.authenticationService.token, 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        console.log(headers);
-        console.log(options);
+
  
         // get users from api
-        return this.http.get(server+'/api2/accounts/'+username+'/', options)
+        let response = this.http.get(server+'/api2/accounts/'+username+'/', options)
             .map((response: Response) => response.json());
+        console.log(response);
+
+        return response;
     }
 }

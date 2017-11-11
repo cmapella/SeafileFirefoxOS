@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-    console.log("! changement de la date du composant !");
     this.pageTitleService.enableBackBtn.subscribe((enable: boolean) => {
       this.enableHeader = enable;
     });

@@ -1,9 +1,14 @@
 export class User {
-    is_staff: boolean;
-    is_active: boolean;
-    id: number;
-    create_time: number;
+    login_id: string;
+    name: string;
+    institution: string;
     usage: number;
-    total: number;
+    is_active: boolean;
     email: string;
+    list_in_address_book: boolean;
+    is_staff: boolean;
+    create_time: number;
+    department: string;
+    total: number;
+    id: number;
 }
