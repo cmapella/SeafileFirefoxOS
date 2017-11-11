@@ -1,7 +1,5 @@
 export class User {
-    login_id: string;
     name: string;
-    institution: string;
     usage: number;
     is_active: boolean;
     email: string;

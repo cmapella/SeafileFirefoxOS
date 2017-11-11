@@ -1,29 +1,27 @@
-<div class="container">
-    <div class="row">
-        <form class="col s12" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="server" name="server" [(ngModel)]="model.server" #server="ngModel" [ngClass]="{ 'invalid': f.submitted && !server.valid }" type="text" class="validate " placeholder="http://" required>
-                    <label for="server" class="active" data-error="L'adresse du serveur n'est pas saisie ou incorrecte">Adresse du serveur</label>
-                </div>
+<div class="row">
+    <form class="col s12" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="server" name="server" [(ngModel)]="model.server" #server="ngModel" [ngClass]="{ 'invalid': f.submitted && !server.valid }" type="text" class="validate " placeholder="http://" required>
+                <label for="server" class="active" data-error="L'adresse du serveur n'est pas saisie ou incorrecte">Adresse du serveur</label>
             </div>
-            <div class="row ">
-                <div class="input-field col s12">
-                    <input id="username " name="username" [(ngModel)]="model.username" #username="ngModel" [ngClass]="{ 'invalid': f.submitted && !username.valid }" type="email" class="validate" placeholder="Saisir adresse email" required>
-                    <label for="username " class="active" data-error="L'email n'est pas saisie ou le format est incorrecte">Email</label>
-                </div>
+        </div>
+        <div class="row ">
+            <div class="input-field col s12">
+                <input id="username " name="username" [(ngModel)]="model.username" #username="ngModel" [ngClass]="{ 'invalid': f.submitted && !username.valid }" type="email" class="validate" placeholder="Saisir adresse email" required>
+                <label for="username " class="active" data-error="L'email n'est pas saisie ou le format est incorrecte">Email</label>
             </div>
-            <div class="row ">
-                <div class="input-field col s12">
-                    <input id="password " name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'invalid': f.submitted && !password.valid }" type="password" class="validate" required>
-                    <label for="password " class="active" data-error="Le mot de passe n'est pas saisie">Password</label>
-                </div>
+        </div>
+        <div class="row ">
+            <div class="input-field col s12">
+                <input id="password " name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'invalid': f.submitted && !password.valid }" type="password" class="validate" required>
+                <label for="password " class="active" data-error="Le mot de passe n'est pas saisie">Password</label>
             </div>
-            <div class='row'>
-                <button [disabled]="loading" class="col s12 btn waves-effect waves-light orange" type="submit ">Connexion</button>
-                <p *ngIf="loading ">CHARGEMENT</p>
-            </div>
-            <div *ngIf="error " class="alert alert-danger ">{{error}}</div>
-        </form>
-    </div>
+        </div>
+        <div class='row'>
+            <button [disabled]="loading" class="col s12 btn waves-effect waves-light orange" type="submit ">Connexion</button>
+            <p *ngIf="loading ">CHARGEMENT</p>
+        </div>
+        <div *ngIf="error " class="alert alert-danger ">{{error}}</div>
+    </form>
 </div>

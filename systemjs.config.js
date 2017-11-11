@@ -25,6 +25,8 @@
 
             // autres librairies
             'rxjs': 'npm:rxjs',
+            'moment': 'npm:moment',
+            'angular2-moment': 'npm:angular2-moment',
         },
         // L'option 'packages' indique à SystemJS comment charger les paquets qui n'ont pas de fichiers et/ou extensions renseignés
         packages: {
@@ -33,6 +35,14 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            'moment': {
+                main: './moment.js',
+                defaultExtension: 'js'
+            },
+            'angular2-moment': {
+                main: './index.js',
                 defaultExtension: 'js'
             }
         }

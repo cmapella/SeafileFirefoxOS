@@ -5,10 +5,18 @@
     <p>You're logged in with JWT!!</p>
 
     <div>
-        Users from secure api end point:
-        <ul>
-
-            <li>{{user.email}}</li>
+        <ul class="collection">
+            <li class="collection-header">
+                <h5>Personal</h5>
+            </li>
+            <li class="collection-item avatar" *ngFor="let library of libraries">
+                <i class="material-icons circle">folder</i>
+                <span class="title">{{library.name}}</span>
+                <p *ngIf="library.mtime <= ((24*3600)*1000); else elseBlock">{{library.mtime * 1000 | amTimeAgo}}</p>
+                <ng-template #elseBlock>
+                    <p>{{library.mtime * 1000 | date:'dd MMMM yyyy'}}</p>
+                </ng-template>
+            </li>
         </ul>
     </div>
 

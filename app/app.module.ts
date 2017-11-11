@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { MomentModule } from 'angular2-moment';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HomeComponent } from "./home/home.component";
 
 import { AuthService } from "./services/auth.service";
 import { UserService } from "./services/user.service";
+import { LibraryService } from "./services/library.service";
 import { AuthGuard } from "./guards/auth-guard.service";
 
 @NgModule({
@@ -32,8 +34,9 @@ import { AuthGuard } from "./guards/auth-guard.service";
     FormsModule,
     HttpModule,
     HomeRoutingModule,
+    MomentModule
   ],
-  providers: [AuthService, UserService, AuthGuard],
+  providers: [AuthService, UserService, LibraryService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
