@@ -5,7 +5,7 @@ import { Title } from "@angular/platform-browser";
 @Component({
   selector: 'app-root',
   templateUrl: './app/app.component.html',
-  styleUrls: ['./app/app.component.css']
+  styleUrls: ['./app/app.component.css'],
   providers: [PageTitleService]
 
 })
