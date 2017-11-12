@@ -24,6 +24,10 @@ export class AppComponent implements OnInit {
 
   }
 
+  ngAfterViewInit() {
+        $('.dropdown-button').dropdown();
+    }
+
   ngAfterViewChecked() {
     this.pageTitleService.enableBackBtn.subscribe((enable: boolean) => {
       this.enableHeader = enable;

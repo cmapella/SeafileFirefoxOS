@@ -1,5 +1,16 @@
-<div id="header" *ngIf="enableHeader" class="grey lighten-2">
-    <a class="waves-effect waves-teal btn-flat grey lighten-2" (click)="goBack()"><i class="material-icons left">arrow_back</i></a>
-    <span class="nav-title">{{headerTitle}}</span>
+<div class="row grey lighten-2">
+    <div id="header" *ngIf="enableHeader" class="col s6">
+        <a id="backBtn" class="waves-effect waves-teal btn-flat grey lighten-2" (click)="goBack()"><i class="material-icons">arrow_back</i></a>
+        <span class="nav-title">{{headerTitle}}</span>
+    </div>
+    <div class="col s5 offset-s1">
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">Nouvelle bibliothèque</a></li>
+            <li><a href="#!">Comptes</a></li>
+            <li><a href="#!">Parametres</a></li>
+            <li><a href="#!">Deconnexion</a></li>
+        </ul>
+        <a class="col s12 btn-flat dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons">menu</i></a>
+    </div>
 </div>
 <router-outlet></router-outlet>
