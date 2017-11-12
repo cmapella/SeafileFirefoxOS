@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class PageTitleService {
     public title: BehaviorSubject<string> = new BehaviorSubject<string>(null);
     public enableBackBtn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+    public enableDropdownBtn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 
     setTitle(value: string) {
         this.title.next(value);
@@ -12,6 +13,10 @@ export class PageTitleService {
 
     setEnableBackBtn(value: boolean){
         this.enableBackBtn.next(value);
+    }
+
+    setEnableDropdownBtn(value: boolean){
+        this.enableDropdownBtn.next(value);
     }
     
 }

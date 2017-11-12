@@ -20,6 +20,7 @@ export class LoginFormComponent implements OnInit {
     this.authenticationService.logout();
     this.pageTitleService.setTitle("Connexion");
     this.pageTitleService.setEnableBackBtn(true);
+    this.pageTitleService.setEnableDropdownBtn(false);
   }
 
   login() {

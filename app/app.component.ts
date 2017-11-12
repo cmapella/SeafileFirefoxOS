@@ -11,7 +11,8 @@ import { Title } from "@angular/platform-browser";
 })
 export class AppComponent implements OnInit {
   headerTitle: string;
-  enableHeader: boolean = false;
+  enableBackBtn: boolean = false;
+  enableDropdownBtn: boolean = false;
   constructor(private cdRef: ChangeDetectorRef, private title: Title, private pageTitleService: PageTitleService) {
   }
 
@@ -24,20 +25,21 @@ export class AppComponent implements OnInit {
 
   }
 
-  ngAfterViewInit() {
-        $('.dropdown-button').dropdown();
-    }
 
   ngAfterViewChecked() {
     this.pageTitleService.enableBackBtn.subscribe((enable: boolean) => {
-      this.enableHeader = enable;
+      this.enableBackBtn = enable;
+    });
+    this.pageTitleService.enableDropdownBtn.subscribe((enable: boolean) => {
+      this.enableDropdownBtn = enable;
     });
     this.cdRef.detectChanges();
+    $('.dropdown-button').dropdown();
   }
 
 
   goBack(): void {
     window.history.back();
   }
-  
+
 }

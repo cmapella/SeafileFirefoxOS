@@ -13,6 +13,7 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit() {
     this.pageTitleService.setEnableBackBtn(false);
+    this.pageTitleService.setEnableDropdownBtn(false);
   }
 
   redirectToLogin(): void {

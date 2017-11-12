@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
         ngOnInit() {
         this.pageTitleService.setTitle("Home");
         this.pageTitleService.setEnableBackBtn(true);
+        this.pageTitleService.setEnableDropdownBtn(true);
                 // get users from secure api end point
         var user = JSON.parse(localStorage.getItem('currentUser'));
         var info = JSON.parse(localStorage.getItem('server'));
