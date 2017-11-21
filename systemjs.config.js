@@ -35,6 +35,7 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                main: './bundles/Rx.min.js',
                 defaultExtension: 'js'
             },
             'moment': {
