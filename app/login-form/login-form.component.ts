@@ -24,17 +24,22 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    this.loading = true;
-    console.log(this.model);
     this.authenticationService.login(this.model.server, this.model.username, this.model.password)
       .subscribe(result => {
         if (result === true) {
-          // login successful
+          this.loading = true;
           this.router.navigate(['/userspace/librairies']);
         } else {
           // login failed
-          this.error = 'Username or password is incorrect';
-          this.loading = false;
+          
+        }
+      },
+      error => {
+        if(error.status === 401){
+          this.error = "L'email ou le mot de passe est incorrecte !"
+        }
+        else{
+          this.error = "Une erreur technique est survenue !"
         }
       });
   }

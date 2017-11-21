@@ -38,7 +38,10 @@ export class AuthService {
                                         // return false to indicate failed login
                                         return false;
                                 }
-                        });
+                        })
+            .catch((error: any) => {
+                return Observable.throw(error);
+            });
         }
 
         logout(): void {
