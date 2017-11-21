@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Seafile Firefox Os</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+
+    <!-- 1. Chargement des librairies -->
+    <!-- Polyfill(s) pour les anciens navigateurs -->
+    <!-- Polyfills -->
+    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+    <!-- RxJS & SystemJS -->
+    <script src="https://unpkg.com/zone.js@0.8.4?main=browser"></script>
+    <script src="https://unpkg.com/systemjs@0.19.40/dist/system.src.js"></script>
+
+    <script src="https://unpkg.com/zone.js?main=browser"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fr"></script>
+
+    <!-- Cette configuration de SystemJS charge les packets npm depuis le web -->
+    <script src="systemjs.config.server.js"></script>
+    <script>
+        System.import('dist/main.js').catch(function(err) {
+            console.error(err);
+        });
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+
+</head>
+<!-- 3. Afficher l'application -->
+
+<body>
+    <div class="">
+        <app-root></app-root>
+    </div>
+</body>
+
+</html>

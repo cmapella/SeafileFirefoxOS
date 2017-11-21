@@ -6,7 +6,7 @@
     System.config({
         paths: {
             // définition d'un raccourcis, 'npm' pointera vers 'node_modules'
-            'npm:': 'node_modules/'
+            'npm:': 'https://unpkg.com/'
         },
         // L'option map permet d'indiquer à SystemJS l'emplacement des éléments charger les éléments
         map: {
