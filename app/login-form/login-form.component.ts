@@ -10,7 +10,7 @@ import { PageTitleService } from "../services/page-title.service";
 export class LoginFormComponent implements OnInit {
   model: any = {};
   loading = false;
-  error = '';
+  errorMsg: String;
 
   constructor(private authenticationService: AuthService, private router: Router, private pageTitleService: PageTitleService) { }
 
@@ -36,10 +36,10 @@ export class LoginFormComponent implements OnInit {
       },
       error => {
         if(error.status === 401){
-          this.error = "L'email ou le mot de passe est incorrecte !"
+          this.errorMsg = "L'email ou le mot de passe est incorrecte !"
         }
         else{
-          this.error = "Une erreur technique est survenue !"
+          this.errorMsg = "Une erreur technique est survenue !"
         }
       });
   }

@@ -18,8 +18,8 @@
                 <label for="password " class="active" data-error="Le mot de passe n'est pas saisie">Password</label>
             </div>
         </div>
-        <div class='row'>
-            <button [disabled]="loading" class="col s12 btn waves-effect waves-light orange" type="submit ">Connexion</button>
+        <div class="row">
+            <div *ngIf="errorMsg" class="red-text">{{errorMsg}}</div>
             <div *ngIf="loader; else elseBlock" class="preloader-wrapper small active right">
                 <div class="spinner-layer spinner-green-only">
                     <div class="circle-clipper left">
@@ -33,7 +33,13 @@
                     </div>
                 </div>
             </div>
+            <ng-template #elseBlock>
+                <div class="input-field col s12">
+                    <button class="col s12 btn waves-effect waves-light orange" type="submit" name="action">Submit
+          <i class="mdi-content-send right"></i>
+        </button>
+                </div>
+            </ng-template>
         </div>
-        <div *ngIf="error " class="alert alert-danger ">{{error}}</div>
     </form>
 </div>
