@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
         }
       },
       error => {
-        if(error.status === 401){
+        if(error.status === 400){
           this.errorMsg = "L'email ou le mot de passe est incorrecte !"
         }
         else{
