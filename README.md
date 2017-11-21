@@ -1,55 +1,87 @@
 # SeafileFirefoxOS
-Seafile Client for Firefox OS
+Le but de ce projet est de réaliser un client Seafile pour la plateforme FirefoxOS dans le cadre de notre cursus universitaire.
 
-# seafile-client
+## Technologies
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+### Serveur
 
-## Prerequisites
+* [API Web Seafile](https://www.seafile.com/en/download/)
 
-You will need the following things properly installed on your computer.
+### Client
+
+* [Angular 5](https://angular.io/)
+* [Materialize CSS](http://materializecss.com/)
+
+
+## Pré-requis
+
+Vous devez au préalable installer les logiciels suivants :
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+* [Mozilla firefox](https://www.mozilla.org/fr/firefox/new/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd seafile-client`
-* `npm install`
+### API Web Seafile
 
-## Running / Development
+* Télécharger l'API Web [Seafile](https://www.seafile.com/en/download/) selon votre système d'exploitation.
+* Consultez le manuel pour installer l'API Web Seafile selon votre système d'exploitation : [Manuel API Web Seafile](https://manual.seafile.com/develop/web_api.html)
+* Vous devez poursuivre l'installation jusqu'à la **création d'un compte administrateur**.
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+### Mac Os
+* Attention l'API Web Seafile n'est pas compatible Mac OS. Vous pouvez utiliser [Virtual Box](https://www.virtualbox.org/wiki/Downloads) pour émuler un système Windows.
+* Pour communiquer avec votre machine virtuelle : **Configuration -> Réseau -> Mode d'accès réseau : Accès par pont.**
+* Ouvrez un terminal dans windows.
+* Saisissez la commande **`ipconfig`**
+* L'adresse de votre machine correspond à **Adresse IPV4 : 192.X.X.X.**
 
-### Code Generators
+### Client Seafile Firefox Os
+#### Windows
+* Ouvrez le terminal **Git Bash**.
+* Clonez le projet dans le répertoire de votre choix : **`git clone https://github.com/cmapella/SeafileFirefoxOS.git`**
+* Placez vous dans le dossier du projet : **`cd SeafileFirefoxOs`**
+* Installez les modules nécessaires au fonctionnement de l'application : **`npm install`**
 
-Make use of the many generators for code, try `ember help generate` for more details
+#### Mac OS
+* Ouvrez un terminal.
+* Clonez le projet dans le répertoire de votre choix : **`git clone https://github.com/cmapella/SeafileFirefoxOS.git`**
+* Placez vous dans le dossier du projet : **`cd SeafileFirefoxOs`**
+* Installez les modules nécessaires au fonctionnement de l'application : **`npm install`**
 
-### Running Tests
+## Lancement de l'application
 
-* `ember test`
-* `ember test --server`
+### Dans un navigateur web
 
-### Building
+* Placez vous dans le dossier du projet avec votre terminal : **`cd SeafileFirefoxOs`**
+* Lancez l'application : **`npm start`**
+* Ouvrez l'application à cette adresse :  [http://localhost:3000](http://localhost:3000).
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+### Depuis un émulateur Firefox OS
 
-### Deploying
+#### Installation du simulateur Firefox OS
 
-Specify what it takes to deploy your app.
+* Lancez votre navigateur **Firefox OS**.
+* Outils -> Développement Web -> WebIDE.
+* Installez le **Simulateur Firefox OS 2.2**, dans l'onglet Simulateur.
+* Installez aussi le **Module ADB Helper** et **Module Tools Adapters**. Ils vous permettront de lancer votre application sur un mobile Firefox OS.
 
-## Further Reading / Useful Links
+#### Lancement de l'application depuis le Web IDE
 
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* Cliquez sur **"Ouvrir une application hébergée"**. Attention à cette étape votre client doit être démarré.
+* L'URL du manifest est la suivante : **"http://localhost:3000/manifest.webapp"**.
+* Le projet Seafile Firefox OS devrait apparaitre dans l'onglet "Mes Projets"
+* Lancez le **Simulateur Firefox OS 2.2**.
+* Dans la fenètre du WebIde, il ne vous reste plus qu'à demarrer l'application via le bouton **lecture**.
+
+### Se connecter à son API Web Seafile
+
+Sur le formulaire de connexion saisissez les informations suivantes :
+
+* **Adresse du serveur** : correspond à l'adresse de l'API Web Seafile. Exemple : **http://localhost:8000** si l'application est démarrée sur votre machine locale ou encore **http://192.X.X.X:8000** sur une machine distante.
+* **Email** : correspond à l'email du compte administrateur que vous avez crée précédemment
+* **Mot de passe** : correspond au mot de passe associé au compte administrateur
+
+
+
 
