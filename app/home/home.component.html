@@ -1,24 +1,35 @@
 <div class="col-md-6 col-md-offset-3">
-
-    <h1>Home</h1>
-
-    <p>You're logged in with JWT!!</p>
-
     <div>
-        <ul class="collection">
-            <li class="collection-header">
-                <h5>Personal</h5>
-            </li>
-            <li class="collection-item avatar" *ngFor="let library of libraries">
-                <i class="material-icons circle">folder</i>
-                <span class="title">{{library.name}}</span>
-                <p *ngIf="library.mtime <= ((24*3600)*1000); else elseBlock">{{library.mtime * 1000 | amTimeAgo}}</p>
-                <ng-template #elseBlock>
-                    <p>{{library.mtime * 1000 | date:'dd MMMM yyyy'}}</p>
-                </ng-template>
-            </li>
+        <ul id="tabs-swipe-demo" class="tabs">
+            <li class="tab col s3"><a href="#swipe-collection-1">Mes bibliothèques</a></li>
+            <li class="tab col s3"><a class="active" href="#swipe-sharred-2">Mes favoris</a></li>
         </ul>
-    </div>
 
-    <p><a [routerLink]="['/login']">Logout</a></p>
+        <div id="swipe-collection-1" class="col s12">
+            <ul class="collection">
+                <li class="collection-item avatar" *ngFor="let library of libraries">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">{{library.name}}</span>
+                    <p *ngIf="library.mtime <= ((24*3600)*1000); else elseBlock">{{library.mtime * 1000 | amTimeAgo}}</p>
+                    <ng-template #elseBlock>
+                        <p>{{library.mtime * 1000 | date:'dd MMMM yyyy'}}</p>
+                    </ng-template>
+                </li>
+            </ul>
+        </div>
+
+        <div id="swipe-sharred-2" class="col s12">
+            <ul class="collection">
+                <li class="collection-item avatar" *ngFor="let library of libraries">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">Mon dossier favori</span>
+                    <p *ngIf="library.mtime <= ((24*3600)*1000); else elseBlock">{{library.mtime * 1000 | amTimeAgo}}</p>
+                    <ng-template #elseBlock>
+                        <p>{{library.mtime * 1000 | date:'dd MMMM yyyy'}}</p>
+                    </ng-template>
+                    <p class="secondary-content"><i class="material-icons">grade</i></p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

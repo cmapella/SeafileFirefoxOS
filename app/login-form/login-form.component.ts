@@ -16,7 +16,6 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
     // reset login status
-    
     this.authenticationService.logout();
     this.pageTitleService.setTitle("Connexion");
     this.pageTitleService.setEnableBackBtn(true);

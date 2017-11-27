@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
         constructor(private libraryService: LibraryService, private pageTitleService: PageTitleService) { }
 
         ngOnInit() {
-        this.pageTitleService.setTitle("Home");
+        this.pageTitleService.setTitle("Accueil");
         this.pageTitleService.setEnableBackBtn(true);
         this.pageTitleService.setEnableDropdownBtn(true);
                 // get users from secure api end point
@@ -26,8 +26,11 @@ export class HomeComponent implements OnInit {
         this.libraryService.getAllLibrary(info.server).subscribe(libraries => {
             console.log(libraries);
             this.libraries = libraries;
-        });
+        }); 
+    }
 
+    ngAfterViewChecked() {
+        $('ul.tabs').tabs();
     }
 
 }

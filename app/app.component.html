@@ -5,10 +5,10 @@
     </div>
     <div *ngIf="enableDropdownBtn" class="col s2 offset-s4">
         <ul id="dropdownHeader" class="dropdown-content">
-            <li><a href="#!">Nouvelle bibliothèque</a></li>
-            <li><a href="#!">Comptes</a></li>
-            <li><a href="#!">Parametres</a></li>
-            <li><a href="#!">Deconnexion</a></li>
+            <li><a href="#!" class="orange-text">Nouvelle bibliothèque</a></li>
+            <li><a href="#!" class="orange-text">Comptes</a></li>
+            <li><a href="#!" class="orange-text">Parametres</a></li>
+            <li><a [routerLink]="['/login']" class="orange-text">Deconnexion</a></li>
         </ul>
         <a class="btn-flat dropdown-button" data-activates="dropdownHeader"><i class="material-icons">menu</i></a>
     </div>

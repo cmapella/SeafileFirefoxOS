@@ -21,8 +21,6 @@ export class AppComponent implements OnInit {
       this.headerTitle = val;
     });
 
-
-
   }
 
 
@@ -34,7 +32,7 @@ export class AppComponent implements OnInit {
       this.enableDropdownBtn = enable;
     });
     this.cdRef.detectChanges();
-    //$('.dropdown-button').dropdown();
+    $('.dropdown-button').dropdown();
   }
 
 
